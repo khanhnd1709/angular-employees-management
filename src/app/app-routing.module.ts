@@ -4,7 +4,7 @@ import { DetailEmployeeComponent } from './detail-employee/detail-employee.compo
 import { ListEmployeesComponent } from './list-employees/list-employees.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/employees', pathMatch: 'full' },
   { path: 'detail/:id', component: DetailEmployeeComponent },
   { path: 'employees', component: ListEmployeesComponent }
 ];
