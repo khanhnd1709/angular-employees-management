@@ -1,8 +1,11 @@
 <div *ngIf="employee">
 
     <h2>{{employee.fullName | uppercase}} Details</h2>
-
-    <div><span>id: </span>{{employee.id}}</div>
+    
+    <div><span>id: </span>{{employee.id}}
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/6840/6840478.png"
+        class="team-img"/> -->
+    </div>
     <div>
         <label for="employee-name">Full name: </label>
         <input id="employee-name" [(ngModel)]="employee.fullName" placeholder="Full name">

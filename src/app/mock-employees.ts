@@ -32,5 +32,21 @@ export const EMPLOYEES: Employee[] = [
         phone: "0888888888",
         homeTown: "HCM",
         university: "TDTU"
+    },
+    {
+        id: 5,
+        fullName: "Nguyễn Bình Oánh",
+        dob: "02/01/2000",
+        phone: "0888888888",
+        homeTown: "HCM",
+        university: "TDTU"
+    },
+    {
+        id: 6,
+        fullName: "Nguyễn Bình Oánh",
+        dob: "02/01/2000",
+        phone: "0888888888",
+        homeTown: "HCM",
+        university: "TDTU"
     }
 ];

@@ -6,14 +6,24 @@
 <div><span>Home town: </span>{{employee.homeTown}}</div>
 <div><span>University: </span>{{employee.university}}</div> -->
 
-<ul class="employees">
-    <li *ngFor="let employee of employees">
-        <a routerLink="/detail/{{employee.id}}">
-            <span class="badge">{{employee.id}}</span>
-            <span class="name">{{employee.fullName}}</span>
-        </a>
-    </li>
-</ul>
+<div class="container-block container">
+    <div class="responsive-container-block teamcard-container">
+        <div class="responsive-cell-block wk-desk-3 wk-mobile-12 wk-tab-4 wk-ipadp-4 team-card-container" *ngFor="let employee of employees">
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6840/6840478.png"
+                        class="team-img" routerLink="/detail/{{employee.id}}"/>
+                </div>
+                <div class="team-card-content">
+                    <p class="text-blk name">{{employee.fullName}}
+                    </p>
+                    <p class="text-blk position">Staff
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- <div *ngIf="selectedEmployee">
     <h2>{{selectedEmployee.fullName | uppercase}} Details</h2>
