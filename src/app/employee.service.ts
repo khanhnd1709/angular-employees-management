@@ -54,4 +54,13 @@ export class EmployeeService {
       catchError(this.handleError<any>('updateHero'))
     );
   }
+
+  /** DELETE: delete the hero from the server */
+  deleteHero(id: number): Observable<Employee> {
+    const url = `${this.employeesUrl}/${id}`;
+
+    return this.http.delete<Employee>(url, this.httpOptions).pipe(
+      catchError(this.handleError<Employee>('deleteEmployee'))
+    );
+  }
 }

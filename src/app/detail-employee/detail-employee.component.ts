@@ -39,4 +39,9 @@ export class DetailEmployeeComponent implements OnInit {
         .subscribe(() => this.goBack());
     }
   }
+
+  delete(employee: Employee): void {
+    this.employeeService.deleteHero(employee.id)
+      .subscribe(() => this.goBack());
+  }
 }
