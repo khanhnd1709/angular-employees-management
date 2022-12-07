@@ -1,0 +1,27 @@
+<div *ngIf="employee">
+
+    <h2>{{employee.fullName | uppercase}} Details</h2>
+
+    <div><span>id: </span>{{employee.id}}</div>
+    <div>
+        <label for="employee-name">Full name: </label>
+        <input id="employee-name" [(ngModel)]="employee.fullName" placeholder="Full name">
+    </div>
+    <div>
+        <label for="employee-dob">Date of birth: </label>
+        <input id="employee-dob" [(ngModel)]="employee.dob" placeholder="Date of birth">
+    </div>
+    <div>
+        <label for="employee-phone">Phone number: </label>
+        <input id="employee-name" [(ngModel)]="employee.phone" placeholder="Phone number">
+    </div>
+    <div>
+        <label for="employee-dob">Home town: </label>
+        <input id="employee-dob" [(ngModel)]="employee.homeTown" placeholder="Home town">
+    </div>
+    <div>
+        <label for="employee-dob">University: </label>
+        <input id="employee-dob" [(ngModel)]="employee.university" placeholder="University">
+    </div>
+</div>
+<button type="button" (click)="goBack()">go back</button>

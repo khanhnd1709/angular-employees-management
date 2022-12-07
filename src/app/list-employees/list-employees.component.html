@@ -1,0 +1,25 @@
+<!-- <h2>{{employee.fullName | uppercase}} Details</h2>
+<div><span>ID: </span>{{employee.id}}</div>
+<div><span>Full name: </span>{{employee.fullName}}</div>
+<div><span>DOB: </span>{{employee.dob}}</div>
+<div><span>Phone number: </span>{{employee.phone}}</div>
+<div><span>Home town: </span>{{employee.homeTown}}</div>
+<div><span>University: </span>{{employee.university}}</div> -->
+
+<ul class="employees">
+    <li *ngFor="let employee of employees">
+        <a routerLink="/detail/{{employee.id}}">
+            <span class="badge">{{employee.id}}</span>
+            <span class="name">{{employee.fullName}}</span>
+        </a>
+    </li>
+</ul>
+
+<!-- <div *ngIf="selectedEmployee">
+    <h2>{{selectedEmployee.fullName | uppercase}} Details</h2>
+    <div>id: {{selectedEmployee.id}}</div>
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="selectedEmployee.fullName" placeholder="name">
+    </div>
+</div> -->
