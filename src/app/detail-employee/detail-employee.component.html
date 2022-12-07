@@ -2,7 +2,7 @@
 
     <h2>{{employee.fullName | uppercase}} Details</h2>
     
-    <div><span>id: </span>{{employee.id}}
+    <div><span id="employee-id">ID: </span><span id="employee-id-value">{{employee.id}}</span>
         <!-- <img src="https://cdn-icons-png.flaticon.com/512/6840/6840478.png"
         class="team-img"/> -->
     </div>
@@ -27,4 +27,7 @@
         <input id="employee-dob" [(ngModel)]="employee.university" placeholder="University">
     </div>
 </div>
-<button type="button" (click)="goBack()">go back</button>
+<div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+</div>
