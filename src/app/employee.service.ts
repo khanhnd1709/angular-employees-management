@@ -54,4 +54,11 @@ export class EmployeeService {
       catchError(this.handleError<any>('updateHero'))
     );
   }
+
+  /** POST: add the hero on the server */
+  addEmployee(employee: Employee): Observable<any> {
+    return this.http.post(this.employeesUrl, employee, this.httpOptions).pipe(
+      catchError(this.handleError<any>('addHero'))
+    );
+  }
 }

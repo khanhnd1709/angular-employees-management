@@ -11,13 +11,15 @@ import { AppRoutingModule } from './app-routing.module'; // <-- NgModel lives he
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListEmployeesComponent,
     RowEmployeeComponent,
-    DetailEmployeeComponent
+    DetailEmployeeComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,

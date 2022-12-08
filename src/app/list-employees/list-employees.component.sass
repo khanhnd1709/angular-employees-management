@@ -75,9 +75,12 @@
 .team-img 
 	max-width: 100% 
 	width: 100% 
-img
-	position: relative
-	top: 0
-	transition: top ease 0.1s
-img:hover
-	top: -20px
+#add-img:hover
+	transition: transform 125ms
+	transform: translateX(10px)
+.team-img
+	will-change: transform
+	transition: transform 450ms
+.team-img:hover
+	transition: transform 125ms
+	transform: translateY(-10px)
