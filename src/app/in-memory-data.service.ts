@@ -7,7 +7,7 @@ import { Employee } from './employee';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const employees = [
+    let employees = [
       {
         id: 1,
         fullName: "Nguyễn Duy Khanh",
@@ -34,22 +34,6 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 4,
-        fullName: "Nguyễn Bình Oánh",
-        dob: "02/01/2000",
-        phone: "0888888888",
-        homeTown: "HCM",
-        university: "TDTU"
-      },
-      {
-        id: 5,
-        fullName: "Nguyễn Bình Oánh",
-        dob: "02/01/2000",
-        phone: "0888888888",
-        homeTown: "HCM",
-        university: "TDTU"
-      },
-      {
-        id: 6,
         fullName: "Nguyễn Bình Oánh",
         dob: "02/01/2000",
         phone: "0888888888",
