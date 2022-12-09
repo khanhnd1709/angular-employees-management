@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     ListEmployeesComponent,
     RowEmployeeComponent,
     DetailEmployeeComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    DeleteEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +33,9 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

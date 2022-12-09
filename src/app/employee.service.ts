@@ -10,8 +10,9 @@ import { EmployeeRequest } from './employeeRequest';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private employeesUrl = 'api/employees';  // URL to web api
-  // private employeesUrl = 'http://127.0.0.1:8080/spearteam/api/members/';  // URL to web api
+
+  private employeesUrl = 'http://localhost:8080/spearteam/api/members';  // URL to web api
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -62,5 +63,10 @@ export class EmployeeService {
     return this.http.post(this.employeesUrl, employee, this.httpOptions).pipe(
       catchError(this.handleError<any>('addHero'))
     );
+  }
+  deleteEmployee(employee:Employee):Observable<any>{ 
+    const url = `${this.employeesUrl}/${employee.id}`;
+    return this.http.delete<Employee>(url,this.httpOptions).pipe(
+      catchError(this.handleError<any>('deleteHero')));
   }
 }
