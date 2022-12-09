@@ -12,5 +12,6 @@ export class Employee {
         public phone: string,
         public homeTown: string,
         public university: string,
+        public email: string
     ){}
 }

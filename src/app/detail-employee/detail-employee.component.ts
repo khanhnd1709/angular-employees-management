@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
+import { EmployeeRequest } from '../employeeRequest';
 
 @Component({
   selector: 'app-detail-employee',
@@ -34,8 +35,11 @@ export class DetailEmployeeComponent implements OnInit {
   }
 
   save(): void {
-    if (this.employee) {
-      this.employeeService.updateEmployee(this.employee)
+    const employeeRequest = new EmployeeRequest(this.employee!.fullName, this.employee!.dob, this.employee!.phone, this.employee!.homeTown, this.employee!.university, this.employee!.email);
+    if (employeeRequest) {
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      employeeRequest.dob = "2000-01-01";
+      this.employeeService.updateEmployee(employeeRequest, id)
         .subscribe(() => this.goBack());
     }
   }

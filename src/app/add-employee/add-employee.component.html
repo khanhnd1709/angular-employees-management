@@ -12,18 +12,22 @@
     </div>
     <div>
         <label for="employee-phone">Phone number: </label>
-        <input [(ngModel)]="employeeRequest.phone" id="employee-name" placeholder="Phone number">
+        <input [(ngModel)]="employeeRequest.phone" id="employee-phone" placeholder="Phone number">
     </div>
     <div>
-        <label for="employee-dob">Home town: </label>
-        <input [(ngModel)]="employeeRequest.homeTown" id="employee-dob" placeholder="Home town">
+        <label for="employee-home-town">Home town: </label>
+        <input [(ngModel)]="employeeRequest.homeTown" id="employee-home-town" placeholder="Home town">
     </div>
     <div>
-        <label for="employee-dob">University: </label>
-        <input [(ngModel)]="employeeRequest.university" id="employee-dob" placeholder="University">
+        <label for="employee-university">University: </label>
+        <input [(ngModel)]="employeeRequest.university" id="employee-university" placeholder="University">
+    </div>
+    <div>
+        <label for="employee-email">Email: </label>
+        <input [(ngModel)]="employeeRequest.email" id="employee-email" placeholder="Email">
     </div>
 </div>
 <div>
     <button type="button" (click)="goBack()">go back</button>
-    <button type="button" (click)="add()">save</button>
+    <button type="button" (click)="add()">add</button>
 </div>

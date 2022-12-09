@@ -5,5 +5,6 @@ export class EmployeeRequest {
         public phone?: string,
         public homeTown?: string,
         public university?: string,
+        public email?: string
     ){}
 }

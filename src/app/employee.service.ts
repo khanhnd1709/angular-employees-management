@@ -52,21 +52,23 @@ export class EmployeeService {
   }
 
   /** PUT: update the hero on the server */
-  updateEmployee(employee: Employee): Observable<any> {
-    return this.http.put(this.employeesUrl, employee, this.httpOptions).pipe(
-      catchError(this.handleError<any>('updateHero'))
+  updateEmployee(employee: EmployeeRequest, id: number): Observable<any> {
+    const url = `${this.employeesUrl}/${id}`;
+    return this.http.put<Employee>(url, employee, this.httpOptions).pipe(
+      catchError(this.handleError<any>('updateEmployee'))
     );
   }
 
   /** POST: add the hero on the server */
   addEmployee(employee: EmployeeRequest): Observable<any> {
-    return this.http.post(this.employeesUrl, employee, this.httpOptions).pipe(
-      catchError(this.handleError<any>('addHero'))
+    return this.http.post<Employee>(this.employeesUrl, employee, this.httpOptions).pipe(
+      catchError(this.handleError<any>('addEmployee'))
     );
   }
-  deleteEmployee(employee:Employee):Observable<any>{ 
+
+  deleteEmployee(employee: Employee): Observable<any> {
     const url = `${this.employeesUrl}/${employee.id}`;
-    return this.http.delete<Employee>(url,this.httpOptions).pipe(
-      catchError(this.handleError<any>('deleteHero')));
+    return this.http.delete<Employee>(url, this.httpOptions).pipe(
+      catchError(this.handleError<any>('deleteEmployee')));
   }
 }

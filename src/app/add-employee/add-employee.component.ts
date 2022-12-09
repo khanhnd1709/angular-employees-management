@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { EmployeeService } from '../employee.service';
@@ -10,7 +10,7 @@ import { EmployeeRequest } from '../employeeRequest';
   styleUrls: ['./add-employee.component.sass']
 })
 export class AddEmployeeComponent implements OnInit {
-  employeeRequest=new EmployeeRequest();
+  employeeRequest = new EmployeeRequest();
   constructor(
     private employeeService: EmployeeService,
     private location: Location
@@ -26,12 +26,14 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   add(): void {
-    if(!this.employeeRequest.fullName){
+    if (!this.employeeRequest.fullName) {
       return;
     }
+    console.log(this.employeeRequest);
+    this.employeeRequest.dob = "2000-01-01";
     this.employeeService.addEmployee(this.employeeRequest)
-    .subscribe(() => {
-      this.goBack();
-    });
+      .subscribe(() => {
+        this.goBack();
+      });
   }
 }
