@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private employeesUrl = 'http://localhost:8080/spearteam/api/members/getAll';  // URL to web api
+  private employeesUrl = 'http://localhost:8080/spearteam/api/members';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
