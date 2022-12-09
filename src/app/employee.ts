@@ -6,12 +6,12 @@ export class Employee {
     // homeTown: string;
     // university: string;
     constructor(
-        public id: number,
-        public fullName: string,
-        public dob: string,
-        public phone: string,
-        public homeTown: string,
-        public university: string,
-        public email: string
+        public id?: number,
+        public fullName?: string,
+        public dob?: string,
+        public phone?: string,
+        public homeTown?: string,
+        public university?: string,
+        public email?: string
     ){}
 }

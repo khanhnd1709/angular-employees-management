@@ -35,11 +35,13 @@ export class DetailEmployeeComponent implements OnInit {
   }
 
   save(): void {
-    const employeeRequest = new EmployeeRequest(this.employee!.fullName, this.employee!.dob, this.employee!.phone, this.employee!.homeTown, this.employee!.university, this.employee!.email);
-    if (employeeRequest) {
+    // const employeeRequest = new EmployeeRequest(this.employee!.fullName, this.employee!.dob, this.employee!.phone, this.employee!.homeTown, this.employee!.university, this.employee!.email);
+    
+    if (this.employee) {
       const id = Number(this.route.snapshot.paramMap.get('id'));
-      employeeRequest.dob = "2000-01-01";
-      this.employeeService.updateEmployee(employeeRequest, id)
+      delete this.employee?.id;
+      this.employee.dob = "2000-01-01";
+      this.employeeService.updateEmployee(this.employee, id)
         .subscribe(() => this.goBack());
     }
   }
