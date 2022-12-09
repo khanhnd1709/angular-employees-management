@@ -4,26 +4,26 @@
 
     <div>
         <label for="employee-name">Full name: </label>
-        <input id="employee-name" placeholder="Full name" #employeeName>
+        <input [(ngModel)]="employeeRequest.fullName" id="employee-name" placeholder="Full name">
     </div>
     <div>
         <label for="employee-dob">Date of birth: </label>
-        <input id="employee-dob" placeholder="Date of birth" #employeeDob>
+        <input [(ngModel)]="employeeRequest.dob" id="employee-dob" placeholder="Date of birth">
     </div>
     <div>
         <label for="employee-phone">Phone number: </label>
-        <input id="employee-name" placeholder="Phone number" #employeePhoneNumber>
+        <input [(ngModel)]="employeeRequest.phone" id="employee-name" placeholder="Phone number">
     </div>
     <div>
         <label for="employee-dob">Home town: </label>
-        <input id="employee-dob" placeholder="Home town" #employeeHomeTown>
+        <input [(ngModel)]="employeeRequest.homeTown" id="employee-dob" placeholder="Home town">
     </div>
     <div>
         <label for="employee-dob">University: </label>
-        <input id="employee-dob" placeholder="University" #employeeUniversity>
+        <input [(ngModel)]="employeeRequest.university" id="employee-dob" placeholder="University">
     </div>
 </div>
 <div>
     <button type="button" (click)="goBack()">go back</button>
-    <button type="button" (click)="add(employeeName.value, employeeDob.value, employeePhoneNumber.value, employeeHomeTown.value, employeeUniversity.value)">Add</button>
+    <button type="button" (click)="add()">save</button>
 </div>

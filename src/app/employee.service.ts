@@ -4,12 +4,15 @@ import { EMPLOYEES } from './mock-employees';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { EmployeeRequest } from './employeeRequest';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
+
   private employeesUrl = 'http://localhost:8080/spearteam/api/members';  // URL to web api
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -56,7 +59,7 @@ export class EmployeeService {
   }
 
   /** POST: add the hero on the server */
-  addEmployee(employee: Employee): Observable<any> {
+  addEmployee(employee: EmployeeRequest): Observable<any> {
     return this.http.post(this.employeesUrl, employee, this.httpOptions).pipe(
       catchError(this.handleError<any>('addHero'))
     );
