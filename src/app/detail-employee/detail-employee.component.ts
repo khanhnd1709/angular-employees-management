@@ -40,7 +40,7 @@ export class DetailEmployeeComponent implements OnInit {
     if (this.employee) {
       const id = Number(this.route.snapshot.paramMap.get('id'));
       delete this.employee?.id;
-      this.employee.dob = "2000-01-01";
+//       this.employee.dob = "2000-01-01";
       this.employeeService.updateEmployee(this.employee, id)
         .subscribe(() => this.goBack());
     }
