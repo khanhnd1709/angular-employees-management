@@ -30,7 +30,7 @@ export class AddEmployeeComponent implements OnInit {
       return;
     }
     console.log(this.employeeRequest);
-    this.employeeRequest.dob = "2000-01-01";
+//     this.employeeRequest.dob = "2000-01-01";
     this.employeeService.addEmployee(this.employeeRequest)
       .subscribe(() => {
         this.goBack();
